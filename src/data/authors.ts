@@ -1,4 +1,4 @@
-import marioImage from "../assets/authors/mario.webp";
+import marioImage from "../assets/authors/ryohei.jpeg";
 
 export interface Props {
   name: string;
