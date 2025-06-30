@@ -9,7 +9,7 @@ import { remarkReadingTime } from "./src/utils/all";
 
 export default defineConfig({
   site: "https://ryhe.github.io",
-  base: '/malaysia-life-blog/',
+  base: process.env.NODE_ENV === 'production' ? '/malaysia-life-blog/' : '/',
   markdown: {
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: ["rehype-plugin-image-native-lazy-loading"],
