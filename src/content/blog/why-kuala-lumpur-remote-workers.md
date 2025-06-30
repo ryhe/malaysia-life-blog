@@ -2,7 +2,7 @@
 title: "なぜ今、クアラルンプール？リモートワーカー注目の5つの理由"
 excerpt: "リモートワークが浸透した今、移住先として注目のクアラルンプール。生活コスト、語学環境、ビザの選択肢、リモートワーク環境すべてでバランスの取れた理想的な選択肢をご紹介します。"
 publishDate: "2024-12-19T10:00:00.000Z"
-image: "../../assets/blog/blog1.jpg"
+image: "../../assets/blog/twin-tower.jpg"
 category: "travel"
 author: "ryohei-tanaka"
 tags: [malaysia, remote-work, kuala-lumpur, digital-nomad, expat]
