@@ -7,7 +7,8 @@ import { authors } from "@/data/authors";
 import { categories } from "@/data/category";
 import Layout from "@/layouts/Layout.astro";
 import { getFormattedDate } from "@/utils/all";
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 import type { Author } from "@/data/authors";
 import type { Category } from "@/data/category";
@@ -27,7 +28,7 @@ const { post } = Astro.props;
 
 const { Content, remarkPluginFrontmatter } = await post.render();
 
-const author = authors.find((item) => item.slug === post.data.author) as Author;
+const author = authors.find((item) => item.slug === post.data.author);
 const category = categories.find(
   (item) => item.slug === post.data.category
 ) as Category;
@@ -53,7 +54,7 @@ const category = categories.find(
         <div class="flex items-center gap-3">
           <div class="relative flex-shrink-0">
             {
-              author.image && (
+              author?.image && (
                 <Image
                   src={author.image}
                   alt="Author Photo"
@@ -68,7 +69,7 @@ const category = categories.find(
 
           <div>
             <p class="text-gray-800 dark:text-gray-400">
-              {author.name}
+              {author?.name || "Unknown Author"}
             </p>
             <div class="flex items-center space-x-2 text-sm">
               <time
@@ -96,7 +97,7 @@ const category = categories.find(
           widths={[200, 400, 800]}
           sizes="(max-width: 640px) 90vw, 480px"
           width={1024}
-          heignt={576}
+          height={576}
           alt="Thumbnail"
           loading="eager"
           class="w-full"

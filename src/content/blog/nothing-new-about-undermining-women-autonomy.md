@@ -4,7 +4,7 @@ excerpt: "In 2007, the now-defunct San Antonio Independent Christian Film Festiv
 publishDate: "2024-03-18T11:39:36.050Z"
 image: "../../assets/blog/blog8.avif"
 category: "lifestyle"
-author: "joshua-wood"
+author: "ryohei-tanaka"
 tags: [tag1, tag2, tag3]
 ---
 

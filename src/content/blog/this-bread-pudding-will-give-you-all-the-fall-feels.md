@@ -4,7 +4,7 @@ excerpt: "We always knew but now we know. The tech elite mean to leave us all be
 publishDate: "2024-05-27T11:39:36.050Z"
 image: "../../assets/blog/blog9.avif"
 category: "travel"
-author: "erika-oliver"
+author: "ryohei-tanaka"
 tags: [tag1, tag2, tag3]
 ---
 

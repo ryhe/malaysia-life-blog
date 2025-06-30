@@ -11,7 +11,7 @@ import { getFormattedDate } from "@/utils/all";
 import { Icon } from "astro-icon/components";
 
 const { post, aspect, preloadImage } = Astro.props;
-const author = authors.find((item) => item.slug === post.data.author) as Author;
+const author = authors.find((item) => item.slug === post.data.author);
 const category = categories.find(
   (item) => item.slug === post.data.category
 ) as Category;
@@ -74,7 +74,7 @@ const category = categories.find(
     <div class="flex items-center gap-3">
       <div class="relative flex-shrink-0 w-5 h-5">
         {
-          author.image && (
+          author?.image && (
             <Image
               src={author.image}
               alt="Author Photo"
@@ -86,7 +86,7 @@ const category = categories.find(
           )
         }
       </div>
-      <span class="text-sm">{author.name}</span>
+      <span class="text-sm">{author?.name || "Unknown Author"}</span>
     </div>
     <span class="text-xs text-gray-300 dark:text-gray-600"> &bull;</span>
     <time class="text-sm" datetime={post.data.publishDate}>
