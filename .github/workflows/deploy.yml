@@ -17,10 +17,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install, build, and upload
         uses: withastro/action@v3   # Astro 公式 Action
-        # オプション例:
-        # with:
-        #   node-version: 20
-        #   package-manager: pnpm@latest
+        with:
+          node-version: 20
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
