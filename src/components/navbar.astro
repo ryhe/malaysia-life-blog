@@ -13,12 +13,8 @@ const leftmenu: Menu[] = [];
 
 const rightmenu: Menu[] = [
   {
-    label: "ブログ",
-    href: "/archive",
-  },
-  {
     label: "運営者情報",
-    href: "/about",
+    href: `${import.meta.env.BASE_URL}about`,
   },
 ];
 
@@ -42,7 +38,7 @@ const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
       </div>
 
       <div class="flex items-center justify-between w-full md:w-auto">
-        <a class="w-40" href="/malaysia-life-blog/">
+        <a class="w-40" href={import.meta.env.BASE_URL}>
           <Image src={logoImage} alt="Malaysia Tips Logo" />
         </a>
 
