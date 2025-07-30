@@ -11,7 +11,20 @@ interface Menu {
 }
 const leftmenu: Menu[] = [];
 
-const rightmenu: Menu[] = [];
+const rightmenu: Menu[] = [
+  {
+    label: "ブログ",
+    href: "/archive",
+  },
+  {
+    label: "運営者情報",
+    href: "/about",
+  },
+  {
+    label: "お問い合わせ",
+    href: "/contact",
+  },
+];
 
 const mobilemenu: Menu[] = [...leftmenu, ...rightmenu];
 ---
