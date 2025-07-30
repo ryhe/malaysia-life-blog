@@ -8,6 +8,11 @@ import Themeswitch from "./themeswitch.astro";
     <!-- フッターリンク -->
     <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm">
       <a
+        href={`${import.meta.env.BASE_URL}contact`}
+        class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
+        お問い合わせ
+      </a>
+      <a
         href={`${import.meta.env.BASE_URL}about`}
         class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
         運営者情報
