@@ -1,55 +1,158 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import { authors } from "@/data/authors";
 import Pagetitle from "@/components/pagetitle.astro";
 import Link from "@/components/ui/link.astro";
+import { Icon } from "astro-icon/components";
 
-
+const author = authors[0]; // 運営者情報
 ---
 
-<Layout title="About">
+<Layout title="運営者情報 | Malaysia Life Blog">
   <Container>
     <Pagetitle>
-      <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="title">運営者情報</Fragment>
+      <Fragment slot="desc">当サイトの運営者について</Fragment>
     </Pagetitle>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        authors.slice(0, 3).map((item) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Image
-                src={item.image}
-                format="avif"
-                width={580}
-                height={580}
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
-              />
+    <div class="mx-auto max-w-4xl">
+      <!-- 運営者プロフィール -->
+      <div class="grid md:grid-cols-2 gap-10 mt-12">
+        <div class="flex justify-center">
+          <div class="w-64 aspect-square">
+            <Image
+              src={author.image}
+              format="avif"
+              width={256}
+              height={256}
+              alt={author.name}
+              class="w-full h-full object-cover rounded-xl shadow-lg"
+            />
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+              {author.name}
+            </h2>
+            <p class="text-lg text-blue-600 dark:text-blue-400 font-medium">
+              Malaysia Life Blog 運営者
+            </p>
+          </div>
+          
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            {author.bio}
+          </p>
+          
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+              <Icon class="w-5 h-5 text-blue-500" name="heroicons:map-pin" />
+              <span>クアラルンプール、マレーシア在住</span>
             </div>
-
-            <div class="mt-4 text-center">
-              <h3 class="text-sm text-gray-500 dark:text-gray-300">
-                {" "}
-                {item.name}
-              </h3>
+            <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+              <Icon class="w-5 h-5 text-blue-500" name="heroicons:envelope" />
+              <a href="/contact" class="hover:text-blue-500 transition-colors">
+                お問い合わせフォームはこちら
+              </a>
+            </div>
+            <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+              <Icon class="w-5 h-5 text-blue-500" name="heroicons:calendar-days" />
+              <span>サイト開始: 2024年</span>
             </div>
           </div>
-        ))
-      }
-    </div>
+        </div>
+      </div>
 
-    <div class="mx-auto max-w-xl text-center mt-14">
-      <p class="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
-      </p>
-      <div class="mt-8">
-        <Link href="/contact" style="primary">Get in touch</Link>
+      <!-- 専門分野・経歴 -->
+      <div class="mt-16 space-y-12">
+        <section>
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            専門分野・経歴
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                🖥️ ITエンジニア
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                複数のスタートアップ企業でのシステム開発経験。技術を活用した効率的な海外生活・移住準備のノウハウを提供しています。
+              </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+              <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                🇲🇾 マレーシア移住経験
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                実際にマレーシアに移住し、ビザ取得・住居確保・生活立ち上げを経験。リアルな体験談と実践的なアドバイスを発信しています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- サイトについて -->
+        <section>
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            Malaysia Life Blogについて
+          </h3>
+          <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              当サイトは、マレーシア移住を検討している方、すでに移住された方に向けて、実用的な情報とリアルな体験談を提供することを目的としています。
+            </p>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+              <li class="flex items-center space-x-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span>ビザ取得手続きの詳細ガイド</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span>住居探し・生活コストの実情報</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span>文化・言語・日常生活のヒント</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span>移住後の仕事・キャリア構築</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 免責・運営方針 -->
+        <section>
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            運営方針
+          </h3>
+          <div class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+            <p>
+              <strong class="text-gray-800 dark:text-gray-200">情報の正確性について：</strong>
+              当サイトの情報は運営者の実体験と調査に基づいていますが、法令改正や状況変化により内容が変更される場合があります。重要な手続きについては必ず公式機関にご確認ください。
+            </p>
+            <p>
+              <strong class="text-gray-800 dark:text-gray-200">個人の体験談について：</strong>
+              掲載内容は運営者の個人的な経験に基づくものであり、すべての方に同様の結果を保証するものではありません。
+            </p>
+            <p>
+              <strong class="text-gray-800 dark:text-gray-200">広告・アフィリエイトについて：</strong>
+              当サイトでは一部アフィリエイト広告を掲載しています。詳細は<a href="/disclaimer" class="text-blue-500 hover:underline">免責・広告ポリシー</a>をご確認ください。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- お問い合わせCTA -->
+      <div class="mt-16 text-center bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+          ご質問・ご相談はお気軽に
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          マレーシア移住に関するご質問や、サイトへのご要望などがありましたら、お気軽にお問い合わせください。
+        </p>
+        <Link href="/contact" style="primary">お問い合わせ</Link>
       </div>
     </div>
   </Container>
